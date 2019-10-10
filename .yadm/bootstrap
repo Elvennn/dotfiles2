@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sudo apt install $(cat ~/pkglist.txt | awk '{print $1}') 
+
+# Install oh my zsh 
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended"
+rm ~/.zshrc
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+chsh -s $(which zsh)
+
+git config --global core.editor "code --wait"
