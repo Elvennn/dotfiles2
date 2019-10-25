@@ -4,6 +4,7 @@ fonts-powerline
 htop
 i3
 imagemagick
+polybar
 redshift
 rofi
 rxvt-unicode-256color

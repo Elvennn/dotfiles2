@@ -15,4 +15,6 @@ chsh -s $(which zsh)
 
 git config --global core.editor "code --wait"
 
+# Installing polybar fonts
+sudo cp ~/.config/polybar/fonts/* /usr/share/fonts/
 fc-cache -f -v
