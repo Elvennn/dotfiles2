@@ -1,6 +1,11 @@
 #!/bin/sh
 
-sudo apt install $(cat ~/pkglist.txt | awk '{print $1}') 
+sudo apt install -y $(cat ~/pkglist.txt | awk '{print $1}') 
+
+while read p; do
+  sudo snap install $p --classic;
+done <~/snaplist.txt
+
 
 # Install oh my zsh 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended"
@@ -9,3 +14,5 @@ mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 chsh -s $(which zsh)
 
 git config --global core.editor "code --wait"
+
+fc-cache -f -v

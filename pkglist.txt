@@ -1,0 +1,11 @@
+curl
+firefox
+fonts-powerline
+htop
+i3
+imagemagick
+redshift
+rofi
+rxvt-unicode-256color
+snapd
+zsh
