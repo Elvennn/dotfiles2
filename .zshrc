@@ -107,3 +107,5 @@ alias grho='grhh origin/$(git symbolic-ref --short HEAD)'
 alias wglog="watch --color -n 1 git log --oneline --decorate --color --graph"
 
 alias yadmgrb="cd ~/workspace/dotfiles2/ && git checkout work && git rebase master && git checkout perso && git rebase master && git checkout home && git rebase perso && git checkout laptop && git rebase perso && git push origin --all -f"
+alias anilog="watch -n 1 ssh admin@192.168.1.7 '/share/CACHEDEV1_DATA/.qpkg/container-station/bin/docker logs --tail 40 anileaf'"
+
