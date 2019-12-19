@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/elven/.oh-my-zsh"
+export ZSH="/home/adrien/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,6 +73,7 @@ plugins=(
     docker
     docker-compose
     alias-tips
+    ember-cli
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,3 +108,37 @@ alias grho='grhh origin/$(git symbolic-ref --short HEAD)'
 alias wglog="watch --color -n 1 git log --oneline --decorate --color --graph"
 
 alias yadmgrb="cd ~/workspace/dotfiles2/ && git checkout work && git rebase master && git checkout perso && git rebase master && git checkout home && git rebase perso && git checkout laptop && git rebase perso && git push origin --all -f"
+export PATH=$PATH:/opt/gradle/gradle-5.6.3/bin
+export FRONT_ROOT=~/workspace/concord-app-front
+export FRONT=$FRONT_ROOT/services/front
+export BACK=~/workspace/Negotiation-App
+export SIGNER=~/workspace/SignerService/stack/signer
+export E2E=~/workspace/concord-e2e-tests
+export TOMCAT=~/workspace/tools/apache-tomcat-8.5.46
+
+alias sone="~/.screenlayout/simple.sh && $HOME/.config/polybar/launch.sh > /tmp/null"
+alias sdual="~/.screenlayout/dual.sh && $HOME/.config/polybar/launch.sh > /tmp/null"
+alias scopy=~"/.screenlayout/dual.sh && $HOME/.config/polybar/launch.sh > /tmp/null"
+
+alias ports="sudo lsof -i -P -n | grep LISTEN"
+
+alias sproxy="docker-compose -f $FRONT_ROOT/docker-compose.yml up -d --build dev-proxy"
+
+alias frontr="cd $FRONT_ROOT"
+alias front="cd $FRONT"
+alias ufront="frontr && ./utils/updateFront.sh"
+alias uftrad="frontr && ./utils/nego.py po all"
+alias sfront="sproxy && ufront && front && npm run serve"
+alias ftr="frontr && utils/nego.py po all && cd -"
+
+alias back="cd $BACK"
+alias bback="back && rm -f $BACK/target/*.war ; mvn package -DskipTests"
+alias rback="bback && cp $BACK/target/*.war $TOMCAT/webapps/contract-live.war && rwar"
+alias rwar="JAVA_OPTS=-Dspring.profiles.active=DEV,AWS $TOMCAT/bin/catalina.sh run"
+alias ssigner="cd $SIGNER && rm -f $SIGNER/target/*war ; mvn package && cp $SIGNER/target/*.war $TOMCAT/webapps/signer.war"
+alias sback="ssigner && back && ./utils/updateBack.sh && rback"
+
+alias e2e="cd $E2E"
+alias re2e="e2e && mvn clean test -P headless -D workers=10"
+
+alias apiary='docker run --rm --interactive --tty --volume "$(pwd)":"$(pwd)" --workdir "$(pwd)" --publish 81:8080 apiaryio/client preview --server --host=0.0.0.0 --watch'
