@@ -1,6 +1,7 @@
 curl
 firefox
 fonts-powerline
+g810-led
 htop
 i3-gaps
 imagemagick
