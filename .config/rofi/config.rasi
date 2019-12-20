@@ -6,25 +6,25 @@
  ***************************************/
 
 * {
-    border-color:                   rgba ( 22, 160, 133, 100 % );
+    border-color:                   rgba ( 66, 66, 66, 100 % );
     background-color:               rgba ( 0, 0, 0, 0 % );
     spacing:                        2;
-    separatorcolor:                 rgba ( 115, 147, 138, 100 % );
-    normal-background:              rgba ( 40, 52, 58, 100 % );
-    normal-foreground:              rgba ( 248, 248, 242, 70 % );
-    normal-background-selected:     rgba ( 30, 38, 43, 100 % );
-    normal-foreground-selected:     rgba ( 248, 248, 242, 100 % );
-    active-background:              rgba ( 40, 52, 58, 100 % );
-    active-foreground:              rgba ( 22, 160, 133, 70 % );
+    separatorcolor:                 rgba ( 126, 126, 126, 100 % );
+    normal-background:              rgba ( 44, 44, 44, 100 % );
+    normal-foreground:              rgba ( 248, 248, 248, 70 % );
+    normal-background-selected:     rgba ( 35, 35, 35, 100 % );
+    normal-foreground-selected:     rgba ( 248, 248, 248, 100 % );
+    active-background:              rgba ( 44, 44, 44, 100 % );
+    active-foreground:              rgba ( 66, 66, 66, 70 % );
     active-background-selected:     rgba ( 20, 20, 17, 100 % );
-    active-foreground-selected:     rgba ( 22, 160, 133, 100 % );
-    alternate-background:           rgba ( 40, 52, 58, 100 % );
-    alternate-foreground:           rgba ( 248, 248, 242, 70 % );
-    alternate-background-selected:  rgba ( 22, 160, 133, 100 % );
-    alternate-foreground-selected:  rgba ( 248, 248, 242, 100 % );
-    urgent-background:              rgba ( 40, 52, 58, 100 % );
+    active-foreground-selected:     rgba ( 66, 66, 66, 100 % );
+    alternate-background:           rgba ( 44, 44, 44, 100 % );
+    alternate-foreground:           rgba ( 248, 248, 248, 70 % );
+    alternate-background-selected:  rgba ( 66, 66, 66, 100 % );
+    alternate-foreground-selected:  rgba ( 248, 248, 248, 100 % );
+    urgent-background:              rgba ( 44, 44, 44, 100 % );
     urgent-foreground:              rgba ( 253, 214, 15, 70 % );
-    urgent-background-selected:     rgba ( 22, 160, 133, 100 % );
+    urgent-background-selected:     rgba ( 66, 66, 66, 100 % );
     urgent-foreground-selected:     rgba ( 253, 214, 15, 100 % );
 }
 #window {
