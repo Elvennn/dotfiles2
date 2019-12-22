@@ -2,11 +2,11 @@ curl
 firefox
 fonts-powerline
 htop
-i3
+i3-gaps
 imagemagick
-polybar
 redshift
 rofi
 rxvt-unicode-256color
 snapd
 zsh
+

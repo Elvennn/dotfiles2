@@ -1,20 +1,40 @@
 #!/bin/sh
 
+mkdir ~/workspace
+
+# Install Polybar
+sudo apt-get install -y cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto i3-wm libxcb-xrm-dev libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev && \
+cd workspace && \
+git clone https://github.com/jaagr/polybar.git && \
+cd polybar && ./build.sh
+
+# i3 gaps
+sudo add-apt-repository ppa:kgilmer/speed-ricer
+sudo apt update
+
+# install packages
+sudo apt upgrade -y
 sudo apt install -y $(cat ~/pkglist.txt | awk '{print $1}') 
 
 while read p; do
   sudo snap install $p --classic;
 done <~/snaplist.txt
 
-
 # Install oh my zsh 
+mv ~/.zshrc ~/.zshrc.backup
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended"
 rm ~/.zshrc
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+mv ~/.zshrc.backup ~/.zshrc
 chsh -s $(which zsh)
 
 git config --global core.editor "code --wait"
 
-# Installing polybar fonts
+# Install polybar fonts
 sudo cp ~/.config/polybar/fonts/* /usr/share/fonts/
-fc-cache -f -v
+
+# Install powerline fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
