@@ -126,9 +126,8 @@ alias sproxy="docker-compose -f $FRONT_ROOT/docker-compose.yml up -d --build dev
 
 alias frontr="cd $FRONT_ROOT"
 alias front="cd $FRONT"
-alias ufront="frontr && ./utils/updateFront.sh"
-alias uftrad="frontr && ./utils/nego.py po all"
-alias sfront="sproxy && ufront && front && npm run serve"
+alias ufront="front && npm ci"
+alias sfront="sproxy && ftr && front && npm run serve"
 alias ftr="frontr && utils/nego.py po all && cd -"
 
 alias back="cd $BACK"
