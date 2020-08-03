@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/elven/.oh-my-zsh"
+export ZSH="/home/adrien/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,7 +72,8 @@ plugins=(
     git
     docker
     docker-compose
-    alias-tips
+    npm
+    gradle
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,3 +108,7 @@ alias grho='grhh origin/$(git symbolic-ref --short HEAD)'
 alias wglog="watch --color -n 1 git log --oneline --decorate --color --graph"
 
 alias yadmgrb="cd ~/workspace/dotfiles2/ && git checkout work && git rebase master && git checkout perso && git rebase master && git checkout home && git rebase perso && git checkout laptop && git rebase perso && git push origin --all -f"
+
+export JAVA_HOME=/usr/lib/jvm/jdk-10.0.2 
+
+alias reset_sr_db="psql -c 'drop database \"dev-sr\";' && psql -c 'create database \"dev-sr\";' && cd ~/workspace/dm/screening/infra/script && ./restore-localhost.sh -dn e2e && cd -"

@@ -26,8 +26,9 @@ font pango:DejaVu Sans Mono 7
 default_border pixel 1
 default_floating_border normal
 
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec_always --no-startup-id numlockx
-exec --no-startup-id ~/.config/i3_swap_display.sh 
+# exec --no-startup-id ~/.config/i3_swap_display.sh 
 exec --no-startup-id redshift
 exec --no-startup-id urxvtd
 
@@ -101,7 +102,7 @@ bindsym $mod+agrave workspace 10
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+Left workspace prev
-bindsym $mod+m move workspace to output left
+bindsym $mod+m move workspace to output up
 
 bindsym $mod+Ctrl+Shift+Right move container to workspace next; workspace next
 bindsym $mod+Ctrl+Shift+Left move container to workspace prev;  workspace prev
