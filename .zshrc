@@ -112,3 +112,7 @@ alias yadmgrb="cd ~/workspace/dotfiles2/ && git checkout work && git rebase mast
 export JAVA_HOME=/usr/lib/jvm/jdk-10.0.2 
 
 alias reset_sr_db="psql -c 'drop database \"dev-sr\";' && psql -c 'create database \"dev-sr\";' && cd ~/workspace/dm/screening/infra/script && ./restore-localhost.sh -dn e2e && cd -"
+
+alias reset_sap_db="psql -c 'drop database \"dev-sap\";' && psql -c 'create database \"dev-sap\";' && cd ~/workspace/dm/sap/infra/script && ./restore-localhost.sh -dn e2e && cd -"
+
+alias reset_all_db="reset_sap_db && reset_sr_db"

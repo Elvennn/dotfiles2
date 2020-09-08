@@ -27,8 +27,9 @@ default_border pixel 1
 default_floating_border normal
 
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec_always --no-startup-id numlockx
-# exec --no-startup-id ~/.config/i3_swap_display.sh 
+exec --no-startup-id numlockx
+exec --no-startup-id sleep 0.3 && ~/.config/screenlayout/work.sh 
+exec --no-startup-id sleep 0.5 && ~/.config/polybar/launch.sh
 exec --no-startup-id redshift
 exec --no-startup-id urxvtd
 
