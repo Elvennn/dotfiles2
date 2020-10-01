@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/adrien/.oh-my-zsh"
+export ZSH="/home/adb95973/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,7 +73,8 @@ plugins=(
     docker
     docker-compose
     npm
-    gradle
+    aws
+    terraform
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,10 +110,3 @@ alias wglog="watch --color -n 1 git log --oneline --decorate --color --graph"
 
 alias yadmgrb="cd ~/workspace/dotfiles2/ && git checkout work && git rebase master && git checkout perso && git rebase master && git checkout home && git rebase perso && git checkout laptop && git rebase perso && git push origin --all -f"
 
-export JAVA_HOME=/usr/lib/jvm/jdk-10.0.2 
-
-alias reset_sr_db="psql -c 'drop database \"dev-sr\";' && psql -c 'create database \"dev-sr\";' && cd ~/workspace/dm/screening/infra/script && ./restore-localhost.sh -dn e2e && cd -"
-
-alias reset_sap_db="psql -c 'drop database \"dev-sap\";' && psql -c 'create database \"dev-sap\";' && cd ~/workspace/dm/sap/infra/script && ./restore-localhost.sh -dn e2e && cd -"
-
-alias reset_all_db="reset_sap_db && reset_sr_db"
