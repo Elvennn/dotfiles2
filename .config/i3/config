@@ -30,6 +30,7 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id sleep 0.5 && ~/.config/polybar/launch.sh
 exec --no-startup-id redshift
 exec --no-startup-id urxvtd
+exec --no-startup-id xsetroot -solid "#222222"
 
 # Hide borders
 hide_edge_borders none
@@ -101,7 +102,7 @@ bindsym $mod+agrave workspace 10
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+Left workspace prev
-bindsym $mod+m move workspace to output up
+bindsym $mod+m move workspace to output left
 
 bindsym $mod+Ctrl+Shift+Right move container to workspace next; workspace next
 bindsym $mod+Ctrl+Shift+Left move container to workspace prev;  workspace prev

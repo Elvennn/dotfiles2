@@ -110,3 +110,4 @@ alias wglog="watch --color -n 1 git log --oneline --decorate --color --graph"
 
 alias yadmgrb="cd ~/workspace/dotfiles2/ && git checkout work && git rebase master && git checkout perso && git rebase master && git checkout home && git rebase perso && git checkout laptop && git rebase perso && git push origin --all -f"
 
+alias aws-login="python ~/workspace/aws-toolbox/aws-cli-mfa.py --serial-number arn:aws:iam::334834705216:mfa/aadb95973 --mfa-token"

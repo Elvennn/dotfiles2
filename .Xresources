@@ -6,7 +6,7 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background:        #151a1c
+XTerm*background:        #212121
 XTerm*foreground:        #d8d8d8
 XTerm*pointerColor:      #8D8D8D
 XTerm*faceName:          Fixed
@@ -14,7 +14,7 @@ XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
-*background:                      #151a1c
+*background:                      #212121
 *foreground:                      #d8d8d8
 *fading:                          8
 *fadeColor:                       black
@@ -65,7 +65,7 @@ URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=tr
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [100]#222D31
+URxvt.background:                 [100]#212121
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
